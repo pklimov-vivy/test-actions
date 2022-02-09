@@ -24,7 +24,7 @@ jobs:
         run: |
           echo $RELEASE_VERSION
           echo ${{ steps.vars.outputs.tag }}
-          echo $SUPER_SECRET
+          echo ${{github.ref}}
   
   test_if:
     if: github.ref == 'main'
