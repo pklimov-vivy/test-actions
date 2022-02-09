@@ -27,7 +27,7 @@ jobs:
           echo $SUPER_SECRET
   
   test_if:
-    if: ${GITHUB_REF##*/} == 'main'
+    if: github.ref == 'main'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@2
@@ -35,7 +35,7 @@ jobs:
         run: echo "on main"
   
   test_if_develop:
-    if:  ${GITHUB_REF##*/} == 'develop'
+    if:  github.ref == 'develop'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@2
