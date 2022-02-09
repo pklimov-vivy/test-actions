@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Set output
         id: vars
-	run: tg = echo ${GITHUB_REF#refs/*/} | cut -b 2-
+	run: tg=$(echo ${GITHUB_REF#refs/*/} | cut -b 2-)
         run: echo ::set-output name=tag::$tg
       - name: Check output
         env:
