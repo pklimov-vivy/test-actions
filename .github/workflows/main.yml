@@ -23,4 +23,4 @@ jobs:
         run: |
           echo $RELEASE_VERSION
           echo ${{ steps.vars.outputs.tag }}
-          echo$ $SUPER_SECRET
+          echo $SUPER_SECRET
