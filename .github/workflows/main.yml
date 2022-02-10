@@ -27,7 +27,8 @@ jobs:
           echo ${{github.ref}}
   
   test_if:
-    if: github.ref == 'main'
+    needs: [test]
+    if: github.ref == 'ref/head/main'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@2
@@ -35,6 +36,7 @@ jobs:
         run: echo "on main"
   
   test_if_develop:
+    needs: [test]
     if:  github.ref == 'develop'
     runs-on: ubuntu-latest
     steps:
