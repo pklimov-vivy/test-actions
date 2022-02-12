@@ -44,4 +44,12 @@ jobs:
       - name: print test
         run: echo "on develop"
         
+  test_reusable_action:
+   needs: [test]
+   uses: pklimov-vivy/test-actions/.github/workflows/reusable_action.yaml@main
+   with:
+     username: test
+   secrets:
+     token: "123"
+        
    
