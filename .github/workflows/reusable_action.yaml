@@ -16,6 +16,7 @@ jobs:
     name: Pass input and secrets to my-action
     runs-on: ubuntu-latest
     steps:
-      - run: |
-       echo ${{ inputs.username}}
-       echo ${{ secrets.tocken }}
+     - name: print act
+       run: |
+        echo ${{ inputs.username}}
+        echo ${{ secrets.tocken }}
