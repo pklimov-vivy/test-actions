@@ -39,7 +39,7 @@ jobs:
           echo ${{ steps.vars.outputs.tag }}
           echo ${{github.ref}}
           echo 'Tags output'
-          echo ${{ needs.get_metadata.meta.tags }}
+          echo ${{ needs.get_metadata.meta.outputs.tags }}
   
   test_if:
     needs: [test]
