@@ -2,8 +2,6 @@ name: Test github actions
 
 on:
  push:
-  branches:
-    - main
   tags:
     - 'v*'
     
@@ -13,11 +11,9 @@ jobs:
   get_metadata:
    runs-on: ubuntu-latest
    steps:
-     -
-       name: Checkout
+     - name: Checkout
        uses: actions/checkout@v2
-     -
-       name: Docker meta
+     - name: Docker meta
        id: meta
        uses: docker/metadata-action@v3
        with:
@@ -42,6 +38,7 @@ jobs:
           echo $RELEASE_VERSION
           echo ${{ steps.vars.outputs.tag }}
           echo ${{github.ref}}
+          echo 'Tags output'
           echo ${{ needs.get_metadata.meta.tags }}
   
   test_if:
