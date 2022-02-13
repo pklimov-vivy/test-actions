@@ -20,6 +20,8 @@ jobs:
          images: name/app
          tags: |
           type=semver,pattern={{version}}
+     - name: Test tag
+       run: echo ${{ steps.meta.outputs.tags }}
    
 
   test:
