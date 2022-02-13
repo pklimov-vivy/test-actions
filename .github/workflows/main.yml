@@ -18,6 +18,8 @@ jobs:
        uses: docker/metadata-action@v3
        with:
          images: name/app
+         tags: |
+          type=semver,pattern={{version}}
    
 
   test:
