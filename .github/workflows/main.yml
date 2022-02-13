@@ -26,6 +26,7 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
+    needs: [get_metadata]
     steps:
       - uses: actions/checkout@v2
       - name: Set output
@@ -41,7 +42,7 @@ jobs:
           echo $RELEASE_VERSION
           echo ${{ steps.vars.outputs.tag }}
           echo ${{github.ref}}
-          echo ${{ jobs.get_metadata.meta.tags }}
+          echo ${{ needs.get_metadata.meta.tags }}
   
   test_if:
     needs: [test]
