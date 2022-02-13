@@ -17,7 +17,7 @@ jobs:
        id: meta
        uses: docker/metadata-action@v3
        with:
-         images: name/app
+         images: questions-mamage-service
          tags: |
           type=semver,enable=true,priority=900,prefix=,suffix=,pattern={{version}}
    outputs:
