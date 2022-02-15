@@ -7,6 +7,10 @@ on:
     
  workflow_dispatch:
 
+env:
+ some: "This is env"
+  
+
 jobs:
   get_metadata:
    runs-on: ubuntu-latest
@@ -67,7 +71,7 @@ jobs:
    needs: [test]
    uses: pklimov-vivy/test-actions/.github/workflows/reusable_action.yaml@main
    with:
-     username: test
+     username: ${{ env.some }}
    secrets:
      token: "123"
         
