@@ -71,7 +71,7 @@ jobs:
    needs: [test]
    uses: pklimov-vivy/test-actions/.github/workflows/reusable_action.yaml@main
    with:
-     username: ${{ steps.vars.outputs.tag }}
+     username: ${{ needs.get_metadata.outputs.tags }}
    secrets:
      token: "123"
         
