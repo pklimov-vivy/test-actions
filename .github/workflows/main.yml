@@ -71,7 +71,7 @@ jobs:
    needs: [test]
    uses: pklimov-vivy/test-actions/.github/workflows/reusable_action.yaml@main
    with:
-     username: ${{ env.some }}
+     username: ${{ jobs.env.some }}
    secrets:
      token: "123"
         
