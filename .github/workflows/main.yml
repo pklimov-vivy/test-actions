@@ -36,7 +36,7 @@ jobs:
       - name: Set output
         id: vars
         run: |
-          snap install helm --classic
+          sudo snap install helm --classic
           tg=$(echo ${GITHUB_REF#refs/*/} | cut -b 2-)
           echo ::set-output name=tag::$tg
       - name: Check output
